@@ -1,0 +1,4 @@
+*.tar
+actions-runner/
+__pycache__/
+*.pyc
