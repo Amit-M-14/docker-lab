@@ -12,9 +12,13 @@ This repository contains the work for Lab 2, covering four tasks on Docker conta
 
 ```
 .
-├── app.py                  # Flask application used across Tasks 1 and 2
-├── requirements.txt        # Python dependencies (Flask)
-├── Dockerfile              # Image definition for the Flask app
+├── app/
+│   ├── app.py              # Flask application used across Tasks 1 and 2
+│   ├── requirements.txt    # Python dependencies (Flask)
+│   └── Dockerfile          # Image definition for the Flask app
+├── k8s/
+│   └── deployment.yaml     # Kubernetes Deployment + Service
+├── docs/                   # Lab report documents (.docx)
 ├── docker-compose.yml      # Multi-container setup (Flask web + Redis) — Task 2
 └── README.md
 ```
@@ -29,7 +33,7 @@ A simple Flask application was containerized from scratch.
 - Wrote a `Dockerfile` using `python:3.11-slim` as the base image, installing dependencies and running the app on port 5000.
 - Built the image:
   ```bash
-  docker build -t flask-docker-app:1.0 .
+  docker build -t flask-docker-app:1.0 ./app
   ```
 - Ran it as a container with port mapping:
   ```bash

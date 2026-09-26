@@ -3,7 +3,7 @@ services:
     image: redis:7-alpine
     container_name: flask-redis
   web:
-    build: .
+    build: ./app
     container_name: flask-web
     depends_on:
       - redis
